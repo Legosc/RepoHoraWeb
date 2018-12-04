@@ -1,0 +1,58 @@
+{
+  "index": "/index.html",
+  "request-options": {
+    "credentials" : "include",
+    "mode": "cors"
+  },
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/*.css",
+          "/*.js"
+        ],"versionedFiles": [
+          "/*.bundle.css",
+          "/*.bundle.js",
+          "/*.chunk.js"
+        ]
+      }
+    }, {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**"
+        ]
+      }
+    }
+  ],"dataGroups": [
+    {
+      "name": "Account-api",
+      "urls": [
+        "https://apiclientes.vitechd.com/api/Account"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "timeout":"10s",
+        "maxAge": "1d",
+        "maxSize": 100
+      }
+    },{
+      "name": "Clients-api",
+      "urls": [
+        "https://apiclientes.vitechd.com/api/Clients"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "timeout":"10s",
+        "maxAge": "1d",
+        "maxSize": 100
+      }
+    }
+  ]
+}
