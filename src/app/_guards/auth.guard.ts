@@ -8,6 +8,11 @@ export class AuthGuard implements CanActivate {
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         if (localStorage.getItem('currentUser')) {
+                    let user = JSON.parse(localStorage.getItem('currentUser'));
+                    if(new Date() >=new Date(user.expiration)){
+                        this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
+                        return false;
+                    }
             // logged in so return true
             return true;
         }
