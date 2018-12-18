@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
 
   // Or with jQuery
-
+  let options = {};
   $(document).ready(function(){
     $('.sidenav').sidenav();
   });

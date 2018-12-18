@@ -1,0 +1,13 @@
+<nav class="nav-extended" *ngIf="isAuthenticated()">
+    <div class="nav-wrapper">
+  
+  <a routerLink="/" class="brand-logo">VITECHD</a>
+  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a routerLink="/login">Logout</a></li>
+      </ul>
+</div>
+</nav>
+<ul class="sidenav" id="mobile-demo">
+    <li><a routerLink="/login">Logout</a></li>
+  </ul>

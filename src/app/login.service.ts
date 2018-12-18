@@ -32,6 +32,19 @@ export class LoginService {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
     }
+    public isAuthenticated(): boolean {
+        // Check whether the token is expired and return
+        // true or false
+        if (localStorage.getItem('currentUser')) {
+                    let user = JSON.parse(localStorage.getItem('currentUser'));
+                    if(new Date() >=new Date(user.expiration)){
+                        return false;
+                    }
+            // logged in so return true
+            return true;
+        }
+        return false;
+      }
     private handleError(error: HttpErrorResponse) {{
         if (error.error instanceof ErrorEvent) {
           // A client-side or network error occurred. Handle it accordingly.

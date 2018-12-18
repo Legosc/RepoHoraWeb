@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-router-sample": {
+    "reporte-horas": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-router-sample",
+            "outputPath": "dist/reporte-horas",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -59,18 +59,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-router-sample:build"
+            "browserTarget": "reporte-horas:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-router-sample:build:production"
+              "browserTarget": "reporte-horas:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-router-sample:build"
+            "browserTarget": "reporte-horas:build"
           }
         },
         "test": {
@@ -105,7 +105,7 @@
         }
       }
     },
-    "angular-router-sample-e2e": {
+    "reporte-horas-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -114,11 +114,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-router-sample:serve"
+            "devServerTarget": "reporte-horas:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-router-sample:serve:production"
+              "devServerTarget": "reporte-horas:serve:production"
             }
           }
         },
@@ -134,5 +134,5 @@
       }
     }
   },
-  "defaultProject": "angular-router-sample"
+  "defaultProject": "reporte-horas"
 }
