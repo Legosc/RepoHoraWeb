@@ -11,20 +11,17 @@ export class HomeService {
   
   getUserHours(){
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    var UserHours: any;
     const options = new HttpHeaders()
             .set("Authorization", "Bearer "+currentUser.token);
-    return this.http.get<any>(`https://apiclientes.vitechd.com/api/Reports/UserHours`,{headers :options})
+            UserHours= this.http.get<any>(`https://apiclientes.vitechd.com/api/Reports/UserHours`,{headers :options})
     .pipe(map(
       response => {
-          console.log(response);
+        localStorage.setItem('UerHors', JSON.stringify(response));
           return response;
-     })).subscribe(data =>{
-      if (data) {
-        // store user details and jwt token in local storage to keep user logged in between page refreshes
-        localStorage.setItem('UerHors', JSON.stringify(data));
-        return data;
-    }
-     });  // this one echoes out what i want
+     }));  // this one echoes out what i want
+     console.log(UserHours);
+     return UserHours;
   }
 
   handleError(error: any): any {

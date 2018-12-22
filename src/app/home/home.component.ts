@@ -11,10 +11,10 @@ export class HomeComponent implements OnInit {
   constructor(private HomeReportService: HomeService) { }
 
   ngOnInit() {
-    this.UserHours = Array.of(this.HomeReportService.getUserHours());
-    console.log("this.UserHours[0]");
-    console.log(this.UserHours[0]);
-    console.log("this.UserHours[0]");
+    this.HomeReportService.getUserHours().subscribe(data => {
+      this.UserHours = data;
+    });
+    
   }
 
 }
