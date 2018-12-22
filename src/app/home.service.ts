@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
+import { pipe } from '@angular/core/src/render3';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,17 +13,18 @@ export class HomeService {
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
     const options = new HttpHeaders()
             .set("Authorization", "Bearer "+currentUser.token);
-    return this.http.get(`https://apiclientes.vitechd.com/api/Reports/UserHours`,{headers :options})
-    .pipe(map(data => {
-      // login successful if there's a jwt token in the response
-      console.log(data);
-      return data;
-    }),catchError(this.handleError)).subscribe(
+    return this.http.get<any>(`https://apiclientes.vitechd.com/api/Reports/UserHours`,{headers :options})
+    .pipe(map(
       response => {
-          
-          console.log("data :"+response);
-          var sample=JSON.stringify(response);
-     });;  // this one echoes out what i want
+          console.log(response);
+          return response;
+     })).subscribe(data =>{
+      if (data) {
+        // store user details and jwt token in local storage to keep user logged in between page refreshes
+        localStorage.setItem('UerHors', JSON.stringify(data));
+        return data;
+    }
+     });  // this one echoes out what i want
   }
 
   handleError(error: any): any {

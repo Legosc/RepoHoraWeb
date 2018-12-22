@@ -53,6 +53,17 @@
         "maxAge": "1d",
         "maxSize": 100
       }
+    },{
+      "name": "UserHours-api",
+      "urls": [
+    "https://apiclientes.vitechd.com/api/Reports/UserHours"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "timeout":"10s",
+        "maxAge": "1d",
+        "maxSize": 100
+      }
     }
   ]
 }
