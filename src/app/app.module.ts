@@ -62,7 +62,7 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     FooterComponent
   ],
-  imports: [MatMenuModule,MatToolbarModule,MatIconModule,MatCardModule,MatFormFieldModule,MatProgressSpinnerModule,MatInputModule,
+  imports: [MatMenuModule,MatToolbarModule,MatIconModule,MatCardModule,MatFormFieldModule,MatProgressSpinnerModule,MatInputModule,MatGridListModule,
     BrowserModule, FormsModule,BrowserAnimationsModule,MatButtonModule, MatCheckboxModule,
     AppRoutingModule,HttpClientModule,ReactiveFormsModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

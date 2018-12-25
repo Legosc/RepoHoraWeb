@@ -1,21 +1,18 @@
-<footer class="page-footer">
-    <nav class="nav-extended" >
-        <div class="nav-wrapper">
-      
-          <ul id="nav-mobile">
-            <li><a routerLink="/login"><i class="material-icons">account_box</i><span>Clientes</span></a></li>
-            <li><a routerLink="/login">Proyectos</a></li>
-            <li><a routerLink="/login">Tareas</a></li>
-            <li><a routerLink="/login">Horas</a></li>
-          </ul>
-    </div>
-    </nav>
-    <div class="container">
-        
-    </div>
+<footer class="page-footer" *ngIf="isAuthenticated()">
+    <nav class="nav-extended">
+        <div class="nav-content">
+           <ul class="tabs tabs-transparent">
+             <li class="tab"><a routerLink="/login"><i class="material-icons left">account_box</i><span>Clientes</span></a></li>
+             <li class="tab"><a routerLink="/login"><i class="material-icons left">account_box</i>Proyectos</a></li>
+             <li class="tab"><a routerLink="/login"><i class="material-icons left">account_box</i>Tareas</a></li>
+             <li class="tab"><a routerLink="/login"><i class="material-icons left">account_box</i>Horas</a></li>
+           </ul>
+         </div>
+      </nav>
+
     <div class="footer-copyright">
       <div class="container">
-     VITECHD © {{date| date:'yyyy'}} Copyright
+     VITECHD © 2018 Copyright
       </div>
     </div>
   </footer>

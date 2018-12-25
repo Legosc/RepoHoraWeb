@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: LoginService, 
+    private router: Router) { }
 
   ngOnInit() {
   }
-
+  isAuthenticated() {
+    var valid = this.authService.isAuthenticated();
+    return valid;
+  }
 }
