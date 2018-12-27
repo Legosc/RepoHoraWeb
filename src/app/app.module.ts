@@ -14,6 +14,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {CdkTableModule} from '@angular/cdk/table';
 import {CdkTreeModule} from '@angular/cdk/tree';
+import { NgxSpinnerModule } from 'ngx-spinner';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -63,7 +64,7 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent
   ],
   imports: [MatMenuModule,MatToolbarModule,MatIconModule,MatCardModule,MatFormFieldModule,MatProgressSpinnerModule,MatInputModule,MatGridListModule,
-    BrowserModule, FormsModule,BrowserAnimationsModule,MatButtonModule, MatCheckboxModule,
+    BrowserModule, FormsModule,BrowserAnimationsModule,MatButtonModule, MatCheckboxModule,NgxSpinnerModule,
     AppRoutingModule,HttpClientModule,ReactiveFormsModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],

@@ -24,7 +24,6 @@
                   </div>
                   <div *ngIf="error" class="alert alert-danger">{{error}}</div>
         </form>
-        <mat-spinner [style.display]="loading ? 'block' : 'none'"></mat-spinner>
       </mat-card-content>
       <mat-card-actions>
           <button class="btn waves-effect waves-light" type="submit" (click)="onSubmit()" name="action">Login</button>

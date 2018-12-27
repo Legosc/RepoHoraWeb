@@ -12,10 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
   $(document).ready(function(){
     $('.sidenav').sidenav();
   });
-  document.addEventListener("DOMContentLoaded", function(){
-    $('.preloader-background').delay(1000).fadeOut('slow');
-    $('.preloader-wrapper').delay(1000).fadeOut();
-  });
+ 
   self.addEventListener('fetch', event => {
     if (event.request.mode === 'navigate') {
       // See /web/fundamentals/getting-started/primers/async-functions
@@ -38,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // event.waitUntil() ensures that the service worker is kept alive
         // long enough to complete the cache update.
         event.waitUntil(async function() {
-          const cache = await caches.open('my-cache-name');
+          const cache = await caches.open('UserHours-api');
           await cache.put(normalizedUrl, await fetchResponseCloneP);
         }());
   
@@ -46,4 +43,21 @@ document.addEventListener('DOMContentLoaded', function() {
         return (await caches.match(normalizedUrl)) || fetchResponseP;
       }());
     }
+  });
+  window.addEventListener('beforeinstallprompt', function(e) {
+    // beforeinstallprompt Event fired
+  
+    // e.userChoice will return a Promise. 
+    // For more details read: https://developers.google.com/web/fundamentals/getting-started/primers/promises
+    e.userChoice.then(function(choiceResult) {
+  
+      console.log(choiceResult.outcome);
+  
+      if(choiceResult.outcome == 'dismissed') {
+        console.log('User cancelled home screen install');
+      }
+      else {
+        console.log('User added to home screen');
+      }
+    });
   });
