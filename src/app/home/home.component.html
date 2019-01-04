@@ -1,16 +1,72 @@
-  <table>
-    <thead>
-      <tr>
-        <td>ID</td>
-        <td>Status</td>
-        <td>Time</td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor ="let d of UserHours;">
-        <td>{{d.id}}</td>
-        <td>{{d.status}}</td>
-        <td>{{d.hoursTime}}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Reportado Semanal</span>
+        <table>
+            <thead>
+              <tr>
+                <td>ID</td>
+                <td>Status</td>
+                <td>Time</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor ="let d of UserHours;">
+                <td>{{d.id}}</td>
+                <td>{{d.status}}</td>
+                <td>{{d.hoursTime}}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Reportado Mensual</span>
+          <table>
+              <thead>
+                <tr>
+                  <td>ID</td>
+                  <td>Status</td>
+                  <td>Time</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor ="let d of UserHours;">
+                  <td>{{d.id}}</td>
+                  <td>{{d.status}}</td>
+                  <td>{{d.hoursTime}}</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+    <div class="col s12">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Reportado Total</span>
+            <table>
+                <thead>
+                  <tr>
+                    <td>ID</td>
+                    <td>Status</td>
+                    <td>Time</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor ="let d of UserHours;">
+                    <td>{{d.id}}</td>
+                    <td>{{d.status}}</td>
+                    <td>{{d.hoursTime}}</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+</div>
+

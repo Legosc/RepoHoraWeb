@@ -54,6 +54,9 @@ import {
 } from '@angular/material';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+
+import { HourListComponent } from './hour/hour-list/hour-list.component';
+import { HourCreateComponent } from './hour/hour-create/hour-create.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,9 +64,11 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     ClientsComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HourListComponent,
+    HourCreateComponent
   ],
-  imports: [MatMenuModule,MatToolbarModule,MatIconModule,MatCardModule,MatFormFieldModule,MatProgressSpinnerModule,MatInputModule,MatGridListModule,
+  imports: [MatAutocompleteModule,MatToolbarModule,MatIconModule,MatCardModule,MatFormFieldModule,MatProgressSpinnerModule,MatInputModule,MatGridListModule,
     BrowserModule, FormsModule,BrowserAnimationsModule,MatButtonModule, MatCheckboxModule,NgxSpinnerModule,
     AppRoutingModule,HttpClientModule,ReactiveFormsModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

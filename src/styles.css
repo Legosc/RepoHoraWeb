@@ -1,9 +1,15 @@
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-  app-root{
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+footer .navbar-fixed nav {
+ bottom: 0;
+}
+.row .col {
+  float: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 .75rem;
+  min-height: 1px;
+}
+app-root{
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -25,19 +31,6 @@ nav {
   flex-wrap: wrap;
   align-items: center;
   padding: 8px 16px;
-}
-.preloader-background {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #eee;
-	
-	position: fixed;
-	z-index: 100;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;	
 }
 /* line 6, ../sass/_content.sass */
 .offline-ui .offline-ui-retry:before {
